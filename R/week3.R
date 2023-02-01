@@ -9,6 +9,10 @@ clean_df <- subset(raw_df, subset = (unclass(raw_df$timeStart) >= unclass(as.POS
 clean_df <- subset(clean_df, subset = (clean_df$q6 == 1))
 
 #Analysis
+clean_df$timeSpent <- difftime(clean_df$timeEnd, clean_df$timeStart, units = "secs")
+hist(as.numeric(clean_df$timeSpent))
+
+
 
 
 
